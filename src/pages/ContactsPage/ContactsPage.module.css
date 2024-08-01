@@ -1,0 +1,28 @@
+.contactsPageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contactsMainContainer {
+  display: flex;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.contactsNav {
+  padding: 1rem;
+  background-color: rgb(50, 50, 50);
+  color: rgb(200, 200, 200);
+}
+
+.contactItem {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contactsMainContainer {
+    flex-direction: column;
+  }
+}

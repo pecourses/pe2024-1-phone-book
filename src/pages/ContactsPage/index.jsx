@@ -1,25 +1,32 @@
 import { Link, Route, Routes, useParams } from "react-router-dom";
 import Header from "../../components/Header";
+import styles from "./ContactsPage.module.css";
 
 function ContactsPage({ contacts }) {
   return (
-    <div>
+    <div className={styles.contactsPageContainer}>
       <Header />
-      <ul>
-        {contacts.map(c => (
-          <li key={c.id}>
-            <Link to={c.id}>
-              {c.firstName} {c.lastName}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <Routes>
-        <Route
-          path=":contactId"
-          element={<ContactsItem contacts={contacts} />}
-        />
-      </Routes>
+      <div className={styles.contactsMainContainer}>
+        <nav className={styles.contactsNav}>
+          <ul>
+            {contacts.map(c => (
+              <li key={c.id}>
+                <Link to={c.id}>
+                  {c.firstName} {c.lastName}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <main className={styles.contactItem}>
+          <Routes>
+            <Route
+              path=":contactId"
+              element={<ContactsItem contacts={contacts} />}
+            />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }
