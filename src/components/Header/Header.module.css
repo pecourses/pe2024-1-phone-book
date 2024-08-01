@@ -1,0 +1,10 @@
+.header {
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.linksList {
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+}
